@@ -55,7 +55,59 @@
         thereby creating new CSS features without waiting for them to be
         implemented natively in browsers.
       </p>
-      <!-- colocar o fluxograma -->
+      <!-- flowchart -->
+      <section class="flowchart">
+        <section class="wrapper-itens-flowchart">
+          <div class="flowchart-circle-small d-flex-column content-center">
+            <p>Parser</p>
+          </div>
+          <div class="d-flex-column content-center">
+            <i class="fas fa-long-arrow-alt-right i-flowchart i-style1"></i>
+            <i class="fas fa-long-arrow-alt-right i-flowchart i-style2"></i>
+          </div>
+        </section>
+
+        <section class="wrapper-itens-flowchart">
+          <div class="d-flex-column content-around">
+            <div
+              class="flowchart-circle d-flex-column content-center flowchart-circle-style1"
+            >
+              <p>DOM</p>
+            </div>
+            <div
+              class="flowchart-circle d-flex-column content-center flowchart-circle-style2"
+            >
+              <p>CSSOM</p>
+            </div>
+          </div>
+          <div class="d-flex-column content-center">
+            <i class="fas fa-long-arrow-alt-right i-flowchart i-style3"></i>
+            <i class="fas fa-long-arrow-alt-right i-flowchart i-style4"></i>
+          </div>
+        </section>
+
+        <section class="wrapper-itens-flowchart">
+          <div class="d-flex-column content-around">
+            <section
+              class="flowchart-pill d-flex-column content-center flowchart-pill-style1"
+            >
+              <p>JS Polyfill</p>
+            </section>
+
+            <section>
+              <div class="flowchart-pill-small d-flex-column content-center">
+                <p>Cascade > Layout > Paint > Composite</p>
+              </div>
+              <div
+                class="flowchart-pill d-flex-column content-center flowchart-pill-style2"
+              >
+                <p class="sparkles">Houdini</p>
+              </div>
+            </section>
+          </div>
+        </section>
+      </section>
+      <!-- END flowchart -->
       <p>
         Houdini enables more semantic CSS with the <a
           href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide">Typed Object Model</a>.
