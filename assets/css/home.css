@@ -69,30 +69,25 @@ body {
   justify-content: space-around;
 }
 
-
 /* flowchart */
 
-.flowchart{
+.flowchart {
   margin: 10% 10%;
-    font-family: "Poppins", sans-serif;
-  font-weight: 500;
   text-align: center;
-  color: var(--black);
-  font-size: 24px;
 }
 .flowchart,
 .wrapper-itens-flowchart {
   display: flex;
   flex-direction: row;
-  z-index: 0;  
+  z-index: 0;
 }
 
 .flowchart-circle-small {
   width: 100px;
   height: 100px;
-  background-color: var(--grey-light);
   border-radius: 100%;
   margin-top: 105px;
+  background-color: var(--grey-light);
 }
 
 .flowchart-circle {
@@ -102,23 +97,22 @@ body {
 }
 
 .flowchart-circle-style1 {
+  margin-top: 25px;
   background-color: var(--purple-light);
-  margin-top: 15px;
 }
 
 .flowchart-circle-style2 {
-  background-color: var(--pink-light);
   margin-top: 25px;
+  background-color: var(--pink-light);
 }
 
 .flowchart-pill {
   width: 505px;
   height: 195px;
   border-radius: 100px;
-  position: absolute;
   left: 450px;
+  position: absolute;
   z-index: 1;
-  
 }
 
 .flowchart-pill-style1 {
@@ -134,14 +128,12 @@ body {
 .flowchart-pill-small {
   width: 356px;
   height: 52px;
+  border-radius: 100px;
   margin-left: -30px;
   margin-top: -15px;
-  border-radius: 100px;
-  background-color: var(--green);
   position: absolute;
-  font-weight: 200;
-  font-size: 18px;
   z-index: 99;
+  background-color: var(--green);
 }
 
 .i-flowchart {
@@ -155,31 +147,30 @@ body {
 }
 
 .i-style2 {
-  transform: rotate(30deg);
   margin-top: 50px;
+  transform: rotate(30deg);
 }
 
 .i-style3 {
-  transform: rotate(35deg);
   margin-top: 6px;
+  transform: rotate(35deg);
 }
 
 .i-style4 {
-  transform: rotate(-32deg);
   margin-bottom: -10px;
   margin-top: 100px;
+  transform: rotate(-32deg);
 }
 
 /*Houdini sparkles*/
-.sparkles{
-    --extra-sparkleNumber: 50; /* defaults to 30 */
-     --extra-sparkleHue: 60; /* Defaults to 60 (yellow) */
-     --extra-sparkleHeightVariance: 9; /* Defaults to 9 */
-     --extra-sparkleWidthVariance: 12; /* Defaults to 12 */
-     --extra-sparkleWeightVariance: 2; /* Defaults to 2 */
-  background-image:paint(extra-sparkles); 
+.sparkles {
+  --extra-sparkleNumber: 50; /* defaults to 30 */
+  --extra-sparkleHue: 60; /* Defaults to 60 (yellow) */
+  --extra-sparkleHeightVariance: 9; /* Defaults to 9 */
+  --extra-sparkleWidthVariance: 12; /* Defaults to 12 */
+  --extra-sparkleWeightVariance: 2; /* Defaults to 2 */
   padding: 20px 40px 25px 40px;
- }
- 
- /* END flowchart */
+  background-image: paint(extra-sparkles);
+}
 
+/* END flowchart */
