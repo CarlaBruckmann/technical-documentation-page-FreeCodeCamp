@@ -1,321 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>CSS Houdini - Paint Worklet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Carla Bruckmann" />
-    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/layout/favicon/apple-touch-icon.png"
-    />
-    <link rel="icon" type="image/ico" sizes="16x16" href="./favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/layout/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/layout/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="assets/layout/favicon/site.webmanifest" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>CSS Houdini - Paint Worklet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Carla Bruckmann" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-  <body style="padding: 100px">
-    <main id="main-doc">
-      <nav id="navbar">
-        <header>
-          <img
-            id="header-image"
-            src="assets/img/menu-img.png"
-            alt="magician image"
-          />
-          <h1>CSS Houdini<br />Paint Worklet</h1>
-        </header>
-        <ul class="menu">
-          <li>
-            <a class="nav-link" href="#What_is_Houdini?">What is Houdini?</a>
-          </li>
-          <li><a class="nav-link" href="#Worklet">Worklet</a></li>
-          <li><a class="nav-link" href="#Paint_Worklet">Paint Worklet</a></li>
-          <li>
-            <a class="nav-link" href="#Browser_Support">Browser Support</a>
-          </li>
-          <li><a class="nav-link" href="#Examples">Examples</a></li>
-          <li><a class="nav-link" href="#References">References</a></li>
-        </ul>
-      </nav>
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/layout/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/ico" sizes="16x16" href="./favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/layout/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/layout/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="assets/layout/favicon/site.webmanifest" />
+</head>
 
-      <section id="What_is_Houdini?" class="main-section">
-        <header>
-          <h2>What is Houdini?</h2>
-        </header>
-        <p>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Houdini"
-            >CSS Houdini</a
-          >
-          is an umbrella term that describes a series a set of low-level APIs
-          that exposes parts of the CSS engine, giving developers the power to
-          extend CSS by hooking into the styling and layout process of a
-          browser’s rendering engine.
-        </p>
-        <p>
-          Houdini is a group of APIs that give developers direct access to the
-          <a
-            href="https://developer.mozilla.org/pt-BR/docs/Web/API/CSS_Object_Model"
-            >CSS Object Model (CSSOM)</a
-          >, enabling developers to write code the browser can parse as CSS,
-          thereby creating new CSS features without waiting for them to be
-          implemented natively in browsers.
-        </p>
-        <!-- colocar o fluxograma -->
-        <p>
-          Houdini enables more semantic CSS with the <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide"
-            >Typed Object Model</a
-          >. Developers can define advanced CSS custom properties with syntax,
-          default values, and inheritance through the <a
-            href="https://web.dev/at-property/"
-            >Properties and Values API</a
-          >.
-        </p>
-        <p>
-          It also introduces paint, layout, and<a
-            href="https://developers.google.com/web/updates/2018/10/animation-worklet"
-          >
-            animation worklets</a
-          >, which open up a world of possibilities, by making it easier for
-          authors to hook into the styling and layout process of the browser's
-          rendering engine.
-        </p>
-      </section>
+<body style="padding: 100px">
+  <main id="main-doc">
+    <nav id="navbar">
+      <header>
+        <img id="header-image" src="assets/img/menu-img.png" alt="magician image" />
+        <h1>CSS Houdini<br />Paint Worklet</h1>
+      </header>
+      <ul class="menu">
+        <li>
+          <a class="nav-link" href="#What_is_Houdini?">What is Houdini?</a>
+        </li>
+        <li><a class="nav-link" href="#Worklet">Worklet</a></li>
+        <li><a class="nav-link" href="#Paint_Worklet">Paint Worklet</a></li>
+        <li>
+          <a class="nav-link" href="#Browser_Support">Browser Support</a>
+        </li>
+        <li><a class="nav-link" href="#Examples">Examples</a></li>
+        <li><a class="nav-link" href="#References">References</a></li>
+      </ul>
+    </nav>
 
-      <section id="Worklet" class="main-section">
-        <header>
-          <h2>Worklet</h2>
-        </header>
-        <p>
-          Before moving onto the other APIs, it’s important to explain the
-          Worklets concept. Worklets are scripts that run during render and are
-          independent of the main JavaScript environment. They are an extension
-          point for rendering engines. They are designed for parallelism (with 2
-          or more instances) and thread-agnostic, have reduced access to the
-          global scope and are called by the rendering engine when needed.
-          Worklets can be run only on HTTPS (on production environment) or on
-          localhost (for development purposes).
-        </p>
-        <p>
-          Houdini introduces following Worklets to extend the browser render
-          engine:
-        </p>
-        <ul>
-          <li>Paint Worklet - Paint API</li>
-          <li>Animation Worklet - Animation API</li>
-          <li>Layout Worklet - Layout API</li>
-        </ul>
-      </section>
+    <section id="What_is_Houdini?" class="main-section">
+      <header>
+        <h2>What is Houdini?</h2>
+      </header>
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Houdini">CSS Houdini</a>
+        is an umbrella term that describes a series a set of low-level APIs
+        that exposes parts of the CSS engine, giving developers the power to
+        extend CSS by hooking into the styling and layout process of a
+        browser’s rendering engine.
+      </p>
+      <p>
+        Houdini is a group of APIs that give developers direct access to the
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/CSS_Object_Model">CSS Object Model (CSSOM)</a>,
+        enabling developers to write code the browser can parse as CSS,
+        thereby creating new CSS features without waiting for them to be
+        implemented natively in browsers.
+      </p>
+      <!-- colocar o fluxograma -->
+      <p>
+        Houdini enables more semantic CSS with the <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide">Typed Object Model</a>.
+        Developers can define advanced CSS custom properties with syntax,
+        default values, and inheritance through the <a href="https://web.dev/at-property/">Properties and Values
+          API</a>.
+      </p>
+      <p>
+        It also introduces paint, layout, and <a
+          href="https://developers.google.com/web/updates/2018/10/animation-worklet">
+          animation worklets</a>, which open up a world of possibilities, by making it easier for
+        authors to hook into the styling and layout process of the browser's
+        rendering engine.
+      </p>
+    </section>
 
-      <section id="Paint_Worklet" class="main-section">
-        <header>
-          <h2>Paint Worklet</h2>
-        </header>
-        <p>There are several steps required in defining a Paint Worklet:</p>
-        <ol>
-          <li>
-            Write and register a Paint Worklet using
-            the <code>registerPaint</code> function.
-          </li>
-          <li>
-            Call the Worklet in HTML file or main JavaScript file
-            using <code>CSS.paintWorklet.addModule</code> function.
-          </li>
-          <li>
-            Use the <code>paint()</code> function in CSS with a Worklet name and
-            optional input arguments.
-          </li>
-        </ol>
-        <p>
-          Let’s take a look at the <code>registerPaint</code> function which is
-          used to register a Paint Worklet and define its functionality.
-        </p>
-        <pre><code>registerPaint("paintWorketExample", class {
+    <section id="Worklet" class="main-section">
+      <header>
+        <h2>Worklet</h2>
+      </header>
+      <p>
+        Before moving onto the other APIs, it’s important to explain the
+        Worklets concept. Worklets are scripts that run during render and are
+        independent of the main JavaScript environment. They are an extension
+        point for rendering engines. They are designed for parallelism (with 2
+        or more instances) and thread-agnostic, have reduced access to the
+        global scope and are called by the rendering engine when needed.
+        Worklets can be run only on HTTPS (on production environment) or on
+        localhost (for development purposes).
+      </p>
+      <p>
+        Houdini introduces following Worklets to extend the browser render
+        engine:
+      </p>
+      <ul>
+        <li>Paint Worklet - Paint API</li>
+        <li>Animation Worklet - Animation API</li>
+        <li>Layout Worklet - Layout API</li>
+      </ul>
+    </section>
+
+    <section id="Paint_Worklet" class="main-section">
+      <header>
+        <h2>Paint Worklet</h2>
+      </header>
+      <p>There are several steps required in defining a Paint Worklet:</p>
+      <ol>
+        <li>
+          Write and register a Paint Worklet using
+          the <code>registerPaint</code> function.
+        </li>
+        <li>
+          Call the Worklet in HTML file or main JavaScript file
+          using <code>CSS.paintWorklet.addModule</code> function.
+        </li>
+        <li>
+          Use the <code>paint()</code> function in CSS with a Worklet name and
+          optional input arguments.
+        </li>
+      </ol>
+      <p>
+        Let’s take a look at the <code>registerPaint</code> function which is
+        used to register a Paint Worklet and define its functionality.
+      </p>
+      <pre><code>registerPaint("paintWorketExample", class {
         static get inputProperties() { return ["--myVariable"]; }
         static get inputArguments() { return ["<color>"]; }
         static get contextOptions() { return {alpha: true}; }paint(ctx, size, properties, args) {
           /* ... */
         }
        }); </code></pre>
-        <p>
-          The <code>registerPaint</code> function consists of several parts:
-        </p>
-        <ul>
-          <li>
-            <code>inputProperties</code>:An array of CSS custom properties that
-            the Worklet will keep track of. This array represents dependencies
-            of a paint worklet.
-          </li>
-          <li>
-            <code>inputArguments</code>:An array of input arguments that can be
-            passed from `paint` function from inside the CSS
-          </li>
-          <li>
-            <code>contextOptions</code>: allow or disallow opacity for colors.
-            If set to `false`, all colors will be displayed with full opacity.
-          </li>
-          <li>
-            <code>paint</code>: the main function that provides the following
-            arguments:
-            <ul>
-              <li>
-                <code>ctx</code>: 2D drawing context, almost identical to Canvas
-                API’s 2D drawing context.
-              </li>
-              <li>
-                <code>size</code>: an object containing the width and height of
-                the element. Values are determined by the layout rendering
-                process. Canvas size is the same as the actual size of the
-                element.
-              </li>
-              <li>
-                <code>properties</code>: input variables defined
-                in <code>inputProperties</code>.
-              </li>
-              <li>
-                <code>args</code>: an array of input arguments passed
-                in <code>paint</code> function in CSS.
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <p>
-          After the Worklet has been registered, it needs to be invoked in the
-          HTML file by simply providing a path to the file.
-        </p>
-        <code>CSS.paintWorklet.addModule("path/to/worklet/file.js");</code>
-        <p>
-          Any Worklet can also be added from an external URL (from a Content
-          Delivery Network, for example) which makes them modular and reusable.
-        </p>
-        <code
-          >CSS.paintWorklet.addModule("https://url/to/worklet/file.js");</code
-        >
-        <p>
-          After the Worklet has been called, it can be used inside CSS using
-          the <code>paint</code> function. This function accepts the Worklet’s
-          registered name as a first input argument and each input argument that
-          follows it is a custom argument that can be passed to a Worklet
-          (defined inside Worklet’s <code>inputArguments</code>). From that
-          point, the browser determines when to call the Worklet and which user
-          actions and CSS custom properties value change to respond to.
-        </p>
-        <pre><code>.exampleElement {
+      <p>
+        The <code>registerPaint</code> function consists of several parts:
+      </p>
+      <ul>
+        <li>
+          <code>inputProperties</code>:An array of CSS custom properties that
+          the Worklet will keep track of. This array represents dependencies
+          of a paint worklet.
+        </li>
+        <li>
+          <code>inputArguments</code>:An array of input arguments that can be
+          passed from `paint` function from inside the CSS
+        </li>
+        <li>
+          <code>contextOptions</code>: allow or disallow opacity for colors.
+          If set to `false`, all colors will be displayed with full opacity.
+        </li>
+        <li>
+          <code>paint</code>: the main function that provides the following
+          arguments:
+          <ul>
+            <li>
+              <code>ctx</code>: 2D drawing context, almost identical to Canvas
+              API’s 2D drawing context.
+            </li>
+            <li>
+              <code>size</code>: an object containing the width and height of
+              the element. Values are determined by the layout rendering
+              process. Canvas size is the same as the actual size of the
+              element.
+            </li>
+            <li>
+              <code>properties</code>: input variables defined
+              in <code>inputProperties</code>.
+            </li>
+            <li>
+              <code>args</code>: an array of input arguments passed
+              in <code>paint</code> function in CSS.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        After the Worklet has been registered, it needs to be invoked in the
+        HTML file by simply providing a path to the file.
+      </p>
+      <code>CSS.paintWorklet.addModule("path/to/worklet/file.js");</code>
+      <p>
+        Any Worklet can also be added from an external URL (from a Content
+        Delivery Network, for example) which makes them modular and reusable.
+      </p>
+      <code>CSS.paintWorklet.addModule("https://url/to/worklet/file.js");</code>
+      <p>
+        After the Worklet has been called, it can be used inside CSS using
+        the <code>paint</code> function. This function accepts the Worklet’s
+        registered name as a first input argument and each input argument that
+        follows it is a custom argument that can be passed to a Worklet
+        (defined inside Worklet’s <code>inputArguments</code>). From that
+        point, the browser determines when to call the Worklet and which user
+        actions and CSS custom properties value change to respond to.
+      </p>
+      <pre><code>.exampleElement {
           /* paintWorkletExample - name of the worklet
              blue - argument passed to a Worklet */
           background-image: paint(paintWorketExample, blue);
         }</code></pre>
-      </section>
+    </section>
 
-      <section id="Browser_Support" class="main-section">
-        <header>
-          <h2>Browser Support</h2>
-        </header>
-        <p>
-          The CSS Painting API is currently one of the best-supported Houdini
-          APIs, its spec being a W3C candidate recommendation. It is currently
-          enabled in all Chromium-based browsers, partially supported in Safari,
-          and is under consideration for Firefox
-        </p>
-        <img src="assets/img/main-img.png" />
-        <p>
-          <em
-            >The CSS Painting API is currently supported on Chromium-based
-            browsers.</em
-          >
-        </p>
-        <p>
-          But even without full browser support, you can still get creative with
-          the Houdini Paint API and see your styles work across all modern
-          browsers with the
-          <a href="https://github.com/GoogleChromeLabs/css-paint-polyfill"
-            >CSS Paint Polyfill</a
-          >.
-        </p>
-      </section>
+    <section id="Browser_Support" class="main-section">
+      <header>
+        <h2>Browser Support</h2>
+      </header>
+      <p>
+        The CSS Painting API is currently one of the best-supported Houdini
+        APIs, its spec being a W3C candidate recommendation. It is currently
+        enabled in all Chromium-based browsers, partially supported in Safari,
+        and is under consideration for Firefox
+      </p>
+      <img src="assets/img/main-img.png" />
+      <p>
+        <em>The CSS Painting API is currently supported on Chromium-based
+          browsers.</em>
+      </p>
+      <p>
+        But even without full browser support, you can still get creative with
+        the Houdini Paint API and see your styles work across all modern
+        browsers with the
+        <a href="https://github.com/GoogleChromeLabs/css-paint-polyfill">CSS Paint Polyfill</a>.
+      </p>
+    </section>
 
-      <section id="Examples" class="main-section">
-        <header>
-          <h2>Examples</h2>
-        </header>
-      </section>
-
-      <section id="References" class="main-section">
-        <header>
-          <h2>References</h2>
-        </header>
-        <p>The content of this page is based on:</p>
-        <ul>
-          <li>
-            <a
-              target="_blank"
-              href="https://developer.mozilla.org/en-US/docs/Web/Houdini"
-              >MDN</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="https://houdini.how/">Houdini.how</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://web.dev/houdini-how/">Web.dev</a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://www.smashingmagazine.com/2020/03/practical-overview-css-houdini/"
-              >Smashing Magazine</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="https://ishoudinireadyyet.com/"
-              >Is Houdini ready yet?</a
-            >
-          </li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <div class="icons">
-        <a
-          title="Free Code Camp"
-          target="_blank"
-          href="https://www.freecodecamp.org/carlabruckmann"
-          class="fab fa-free-code-camp"
-        ></a>
-        <a
-          title="GitHub"
-          target="_blank"
-          href="https://github.com/CarlaBruckmann"
-          class="fab fa-github"
-        ></a>
-        <a
-          title="Linkedin"
-          target="_blank"
-          href="https://www.linkedin.com/in/carla-bruckmann-271576ba/"
-          class="fab fa-linkedin"
-        ></a>
+    <section id="Examples" class="main-section">
+      <header>
+        <h2>Examples</h2>
+      </header>
+      <div>
+        <p class="codepen" data-height="350" data-theme-id="light" data-default-tab="css,result"
+          data-user="carlabruckmann" data-slug-hash="dyNJNJE" data-preview="true"
+          style="height: 350px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="CSS Houdini - Paint Worklet - Connections ">
+          <span>See the Pen <a href="https://codepen.io/carlabruckmann/pen/dyNJNJE">
+              CSS Houdini - Paint Worklet - Connections </a> by Carla Bruckmann (<a
+              href="https://codepen.io/carlabruckmann">@carlabruckmann</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
       </div>
-    </footer>
-    <script
-      src="https://kit.fontawesome.com/ec6c9f4d17.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="src/main.js"></script>
-  </body>
+      <div>
+        <p class="codepen" data-height="350" data-theme-id="light" data-default-tab="css,result"
+          data-user="carlabruckmann" data-slug-hash="dyNJMqK" data-preview="true"
+          style="height: 350px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="CSS Houdini - Paint Worklet - Circles ">
+          <span>See the Pen <a href="https://codepen.io/carlabruckmann/pen/dyNJMqK">
+              CSS Houdini - Paint Worklet - Circles </a> by Carla Bruckmann (<a
+              href="https://codepen.io/carlabruckmann">@carlabruckmann</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+      </div>
+      <div>
+        <p class="codepen" data-height="350" data-theme-id="light" data-default-tab="css,result"
+          data-user="carlabruckmann" data-slug-hash="poRpxEM" data-preview="true"
+          style="height: 350px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="CSS Houdini - Paint Worklet - Sparkles">
+          <span>See the Pen <a href="https://codepen.io/carlabruckmann/pen/poRpxEM">
+              CSS Houdini - Paint Worklet - Sparkles</a> by Carla Bruckmann (<a
+              href="https://codepen.io/carlabruckmann">@carlabruckmann</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+      </div>
+      <div>
+        <p class="codepen" data-height="350" data-theme-id="light" data-default-tab="js,result"
+          data-user="carlabruckmann" data-slug-hash="poRpREe" data-preview="true"
+          style="height: 350px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="CSS Houdini - Paint Worklet - Ripple Effect ">
+          <span>See the Pen <a href="https://codepen.io/carlabruckmann/pen/poRpREe">
+              CSS Houdini - Paint Worklet - Ripple Effect </a> by Carla Bruckmann (<a
+              href="https://codepen.io/carlabruckmann">@carlabruckmann</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+      </div>
+      <div>
+        <p class="codepen" data-height="350" data-theme-id="light" data-default-tab="css,result"
+          data-user="carlabruckmann" data-slug-hash="QWdaGge" data-preview="true"
+          style="height: 350px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="CSS Houdini - Paint Worklet - Curved Line ">
+          <span>See the Pen <a href="https://codepen.io/carlabruckmann/pen/QWdaGge">
+              CSS Houdini - Paint Worklet - Curved Line </a> by Carla Bruckmann (<a
+              href="https://codepen.io/carlabruckmann">@carlabruckmann</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="References" class="main-section">
+      <header>
+        <h2>References</h2>
+      </header>
+      <p>The content of this page is based on:</p>
+      <ul>
+        <li>
+          <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Houdini">MDN</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://houdini.how/">Houdini.how</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://web.dev/houdini-how/">Web.dev</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.smashingmagazine.com/2020/03/practical-overview-css-houdini/">Smashing
+            Magazine</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://ishoudinireadyyet.com/">Is Houdini ready yet?</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="icons">
+      <a title="Free Code Camp" target="_blank" href="https://www.freecodecamp.org/carlabruckmann"
+        class="fab fa-free-code-camp"></a>
+      <a title="GitHub" target="_blank" href="https://github.com/CarlaBruckmann" class="fab fa-github"></a>
+      <a title="Linkedin" target="_blank" href="https://www.linkedin.com/in/carla-bruckmann-271576ba/"
+        class="fab fa-linkedin"></a>
+    </div>
+  </footer>
+  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+  <script src="https://kit.fontawesome.com/ec6c9f4d17.js" crossorigin="anonymous"></script>
+  <script src="src/main.js"></script>
+</body>
+
 </html>
