@@ -171,6 +171,16 @@ em{
   margin:0 0 30px 70px;
 }
 
+.main-section ul li ul li {
+  list-style: none
+}
+
+.main-section ul li ul li:before {
+  content: '\2022';
+  margin: 0 2px;
+  color: var(--blue-bold);
+ }
+
 
 .main-section img{
   width: 90%;
@@ -187,15 +197,15 @@ em{
 }
 
 .icons a{
-font-size: 25px;
-margin-right: 20px;
-color: grey;
+  font-size: 25px;
+  margin-right: 20px;
+  color: grey;
 }
 
 .icons a:hover{
   color: var(--blue-regular);
-  }
-  
+}
+
 
 
 /* flowchart */
