@@ -59,7 +59,6 @@
     font-size: 20px;
     transition: var(--transition);
   }
-
   .d-flex-column-responsive {
     flex-direction: column;
   }
@@ -79,5 +78,6 @@
   .main-section img{
     width: 100%;
     padding: 20px 0 20px 0;
+    transition: var(--transition);
   }
 }

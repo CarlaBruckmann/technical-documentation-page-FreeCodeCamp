@@ -3,6 +3,7 @@
 :root {
   --white: #ffffff;
   --grey-light: rgba(195, 195, 195, 0.47);
+  --grey-bold: #6C6C75;
   --black: #010d00;
   --green: rgba(4, 217, 166, 0.76);
   --purple-light: rgba(149, 139, 217, 0.58);
@@ -28,7 +29,6 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 35px;
   letter-spacing: -0.5px;
-  color: var(--black);
 }
 
 #main-doc{
@@ -52,7 +52,7 @@ p, li, a,
 .font-main-text {
   font-weight: 300;
   font-size: 18px;
-  color: var(--black);
+  color:var(--grey-bold);
 }
 
 pre{
@@ -71,11 +71,11 @@ pre,
 li code,
 p code{
   background-color: var(--yellow-light);
-  color:gray;
+  color:var(--black);
 }
 
 em{
-  margin-left: 200px;
+  margin-left: 150px;
 }
 
 .font-medium,
@@ -171,17 +171,6 @@ em{
   margin:0 0 30px 70px;
 }
 
-.main-section ul li ul li {
-  list-style: none
-}
-
-.main-section ul li ul li:before {
-  content: '\2022';
-  margin: 0 2px;
-  color: var(--blue-bold);
- }
-
-
 .main-section img{
   width: 90%;
   padding: 20px 0 20px 30px;
@@ -199,7 +188,7 @@ em{
 .icons a{
   font-size: 25px;
   margin-right: 20px;
-  color: grey;
+  color: var(--grey-bold);
 }
 
 .icons a:hover{
