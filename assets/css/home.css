@@ -66,6 +66,7 @@ pre{
   padding: 20px;
   
 }
+
 pre,
 li code,
 p code{
@@ -76,7 +77,6 @@ p code{
 em{
   margin-left: 200px;
 }
-
 
 .font-medium,
 .nav-link {
@@ -146,7 +146,8 @@ em{
   color: var(--white);
 }
 
-.main-section{
+.main-section
+{
   padding: 30px 60px 0 60px;
 }
 
