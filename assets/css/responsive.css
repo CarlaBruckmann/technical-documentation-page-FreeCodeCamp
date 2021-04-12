@@ -1,0 +1,27 @@
+@media only screen and (max-width: 815px) {
+    /* For mobile phones: */
+    .d-flex-responsive{
+        flex-direction: column;
+        justify-content: center;
+    }
+    #navbar {
+      position: static;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    #main-doc{
+        position: static;
+        margin-left: 0px;
+        padding: 0px;
+      }
+
+     
+  
+
+  }
+  
+
+
+  
