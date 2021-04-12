@@ -1,27 +1,39 @@
 @media only screen and (max-width: 815px) {
     /* For mobile phones: */
-    .d-flex-responsive{
+    em{
+      margin-left: 0;
+    }
+    .d-flex-row-responsive{
         flex-direction: column;
         justify-content: center;
     }
+
+    .d-flex-column-responsive{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     #navbar {
       position: static;
       top: 0;
-      padding: 0;
+      padding: 30px;
       margin: 0;
       width: 100%;
     }
+
+
     #main-doc{
         position: static;
         margin-left: 0px;
         padding: 0px;
       }
 
-     
-  
-
   }
   
+  @media only screen and (max-width: 550px) {
+    .d-flex-column-responsive{
+      flex-direction: column;
 
-
+    }
   
+  }

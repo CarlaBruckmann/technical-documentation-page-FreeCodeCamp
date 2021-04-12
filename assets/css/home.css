@@ -33,11 +33,10 @@ body {
 
 #main-doc{
   position: absolute;
-  margin-left: 310px;
-  padding: 30px;
+  margin-left: 300px;
 }
 
-h1,
+h1,h2,
 .font-extra-bold {
   font-weight: 800;
   font-size: 30px;
@@ -46,6 +45,7 @@ h1,
 h1{
   text-transform: uppercase;
   color: var(--white);
+  text-align: center;
 }
 
 p, li, a,
@@ -57,12 +57,13 @@ p, li, a,
 
 pre{
   resize: both;
-  width: 100%;
-  min-width: 250px;
+  width: 90%;
+  margin: 50px 0 50px 40px;
   overflow: auto;
   border: 1px solid var(--yellow-light);
   font-size: 16px;
   border-radius: 10px;
+  padding: 20px;
   
 }
 pre,
@@ -71,6 +72,11 @@ p code{
   background-color: var(--yellow-light);
   color:gray;
 }
+
+em{
+  margin-left: 200px;
+}
+
 
 .font-medium,
 .nav-link {
@@ -95,14 +101,19 @@ p code{
   flex-direction: column;
 }
 
+.d-flex-column-responsive{
+  display: flex;
+  flex-direction: column;
+}
+
 .content-center {
   justify-content: center;
+  align-items: center;
 }
 
 .content-around {
   justify-content: space-around;
 }
-
 
 #navbar{
   background-color: var(--blue-bold);
@@ -115,28 +126,76 @@ p code{
   padding: 30px;
 }
 
-
 #navbar img{
-  width: 100px;
-  height: 100px;
+  width: 115px;
+  height: 115px;
+  margin: 40px 0 25px 0;
+}
+#navbar h1{
+  margin-bottom: 90px;
 }
 
-#navbar li{
+#navbar li,
+#References li
+{
   list-style-type: none; 
+  margin: 20px 0;
 }
 
 #navbar .nav-link{
   color: var(--white);
 }
 
+.main-section{
+  padding: 30px 60px 0 60px;
+}
+
+.main-section h2{
+  color: var(--blue-bold);
+  margin: 40px 0 25px 0;
+}
+
+.main-section p
+{
+  margin-bottom: 30px;
+}
+
 .main-section a{
   color: var(--blue-bold);
 }
 
+.main-section ul,
+.main-section ol
+{
+  margin:0 0 30px 70px;
+}
+
+
 .main-section img{
   width: 90%;
-  margin: 0 auto;
+  padding: 20px 0 20px 30px;
 }
+
+.space{
+  width: 100%;
+  height: 50px;
+}
+
+.icons{
+  margin: 100px 0 25px 0;
+}
+
+.icons a{
+font-size: 25px;
+margin-right: 20px;
+color: grey;
+}
+
+.icons a:hover{
+  color: var(--blue-regular);
+  }
+  
+
 
 /* flowchart */
 
