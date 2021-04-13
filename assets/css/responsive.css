@@ -157,6 +157,7 @@
     transition: var(--transition);
   }
   .i-style3 {
+    margin-top: -10px;
     transform: rotate(45deg);
     transition: var(--transition);
   }
@@ -164,5 +165,9 @@
     margin-top: 60px;
     transform: rotate(-45deg);
     transition: var(--transition);
+  }
+  .sparkles {
+    --extra-sparkleNumber: 10; /* defaults to 30 */
+    padding: 20px 40px 25px 30px;
   }
 }
