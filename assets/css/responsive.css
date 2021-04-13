@@ -32,6 +32,35 @@
     margin: 0;
     width: 100%;
   }
+
+ 
+  .flowchart p{
+    font-size: 12px;
+  }
+  .flowchart-circle-small {
+    width: 80px;
+    height: 80px;
+    margin-top: 65px;
+  }
+  .flowchart-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+  }
+  .i-flowchart {
+    font-size: 15px;
+  }
+  .flowchart-pill {
+    width: 300px;
+    height: 130px;
+    margin-left: -15%;
+  }
+  .flowchart-pill-small {
+    width: 220px;
+    height: 52px;
+    margin-left: -3px;
+  }
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -79,5 +108,8 @@
     width: 100%;
     padding: 20px 0 20px 0;
     transition: var(--transition);
+  }
+  .flowchart {
+    margin: 0;
   }
 }

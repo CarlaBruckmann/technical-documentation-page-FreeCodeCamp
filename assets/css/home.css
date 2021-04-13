@@ -216,12 +216,18 @@ em{
 }
 
 
-
 /* flowchart */
 
-/* .flowchart {
+ .flowchart {
   text-align: center;
+  margin-left: 10%;
 }
+
+.flowchart p{
+  margin:0;
+  color: var(--black);
+}
+
 .flowchart,
 .wrapper-itens-flowchart {
   display: flex;
@@ -232,7 +238,7 @@ em{
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  margin-top: 105px;
+  margin-top: 115px;
   background-color: var(--grey-light);
 }
 .flowchart-circle {
@@ -241,45 +247,40 @@ em{
   border-radius: 100%;
 }
 .flowchart-circle-style1 {
-  margin-top: 25px;
   background-color: var(--purple-light);
 }
+
 .flowchart-circle-style2 {
-  margin-top: 25px;
   background-color: var(--pink-light);
 }
+
 .flowchart-pill {
   width: 505px;
   height: 195px;
   border-radius: 100px;
-  left: 45vw;
-  position: absolute;
+  margin-left: -20%;
   z-index: 1;
 }
 .flowchart-pill-style1 {
   background-color: var(--yellow-regular);
-  margin-top: -120px;
 }
 
 .flowchart-pill-style2 {
   background-color: var(--blue-light);
-  margin-top: -15px;
+  margin-top: -50px;
 }
-
 .flowchart-pill-small {
   width: 356px;
   height: 52px;
   border-radius: 100px;
-  margin-left: -30px;
-  margin-top: -15px;
+  margin-top: -50px;
+  margin-left: -25px;
   position: absolute;
   z-index: 99;
   background-color: var(--green);
 }
 .i-flowchart {
   font-size: 35px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 .i-style1 {
   transform: rotate(-30deg);
@@ -296,7 +297,7 @@ em{
   margin-bottom: -10px;
   margin-top: 100px;
   transform: rotate(-32deg);
-} */
+} 
 /*Houdini sparkles*/
 .sparkles {
   --extra-sparkleNumber: 50; /* defaults to 30 */
@@ -313,7 +314,7 @@ em{
 /*Houdini Ripple Effect*/
 .background {
   background-color: var(--blue-bold);
-
+  
   /* Required for animation by the worklet */
   --ripple-x: 0;
   --ripple-y: 0;
