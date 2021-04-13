@@ -294,3 +294,19 @@ em{
   background-image: paint(extra-sparkles);
 }
 /* END flowchart */
+
+
+/*Houdini Ripple Effect*/
+.background {
+  background-color: var(--blue-bold);
+
+  /* Required for animation by the worklet */
+  --ripple-x: 0;
+  --ripple-y: 0;
+  --ripple-color: var(--blue-regular);
+  --animation-tick: 0;
+}
+
+.background.animating {
+  background-image: paint(ripple);
+}
