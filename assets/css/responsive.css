@@ -28,6 +28,7 @@
     padding: 30px;
     margin: 0;
     width: 100%;
+    text-align: end;
   }
   .flowchart p {
     font-size: 12px;
@@ -98,6 +99,9 @@
   }
   .d-flex-column-responsive {
     flex-direction: column;
+  }
+  #navbar{
+    text-align: start;
   }
   #navbar img {
     margin: 20px 0 25px 0;
