@@ -133,7 +133,7 @@ h3 {
 #navbar .nav-link {
   color: var(--white);
 }
-#navbar .nav-link:hover{
+#navbar .nav-link:hover {
   color: var(--yellow-bold);
   transition: var(--transition);
 }
@@ -184,8 +184,7 @@ h3 {
   margin: 90px 0 100px 0;
 }
 .flowchart:hover,
-.flowchart:focus
-{
+.flowchart:focus {
   animation-name: flowchart;
   animation-duration: 1s;
   animation-fill-mode: forwards;

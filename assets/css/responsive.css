@@ -2,7 +2,7 @@
   --transition: 0.4s ease all;
 }
 
-@media only screen and (max-width: 815px) {
+@media screen and (max-width: 815px) {
   em {
     margin-left: 0;
   }
@@ -71,7 +71,7 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
   h1,
   h2,
   .font-extra-bold {
@@ -122,7 +122,7 @@
   }
 }
 
-@media only screen and (max-width: 515px) {
+@media screen and (max-width: 515px) {
   .flowchart {
     justify-content: center;
   }
