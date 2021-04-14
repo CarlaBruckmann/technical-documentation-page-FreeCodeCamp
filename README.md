@@ -15,10 +15,9 @@
 
 #### 🌎  *[CodePen](https://bit.ly/3aahmVT)* - *[freeCodeCamp](https://www.freecodecamp.org/carlabruckmann)* 
 
+
 [Preview - Home]
 <img src="https://github.com/CarlaBruckmann/technical-documentation-page-FreeCodeCamp/blob/master/assets/img/home.png" alt="preview home" width="100%"/>
-
-<br>
 
 [Test]
 
