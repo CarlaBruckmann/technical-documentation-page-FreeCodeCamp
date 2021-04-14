@@ -154,10 +154,14 @@ h3 {
   color: var(--white);
 }
 
-#navbar .nav-link:hover,
+#navbar .nav-link:hover{
+  color: var(--yellow-bold);
+  transition: var(--transition);
+}
+
 .main-section a:hover,
 .icons a:hover {
-  color: var(--yellow-bold);
+  color: var(--blue-regular);
   transition: var(--transition);
 }
 
