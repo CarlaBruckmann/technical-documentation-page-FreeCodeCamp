@@ -215,6 +215,15 @@ h3 {
 
 .flowchart {
   text-align: center;
+  margin: 90px 0 100px 0;
+}
+
+.flowchart:hover,
+.flowchart:focus
+{
+  animation-name: flowchart;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .flowchart p {
@@ -328,5 +337,15 @@ h3 {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+
+@keyframes flowchart {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
   }
 }
