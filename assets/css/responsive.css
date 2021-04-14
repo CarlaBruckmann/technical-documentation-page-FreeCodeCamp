@@ -14,17 +14,14 @@
     margin-left: 0px;
     padding: 0px;
   }
-
   .d-flex-row-responsive {
     flex-direction: column;
     justify-content: center;
   }
-
   .d-flex-column-responsive {
     flex-direction: row;
     justify-content: space-between;
   }
-
   #navbar {
     position: static;
     top: 0;
@@ -32,12 +29,10 @@
     margin: 0;
     width: 100%;
   }
-
   .flowchart p {
     font-size: 12px;
     transition: var(--transition);
   }
-
   .flowchart-circle-small {
     width: 80px;
     height: 80px;
@@ -54,7 +49,6 @@
     font-size: 20px;
     transition: var(--transition);
   }
-
   .i-style3 {
     margin-top: 0px;
     transition: var(--transition);
@@ -63,7 +57,6 @@
     margin-top: 60px;
     transition: var(--transition);
   }
-
   .flowchart-pill {
     width: 300px;
     height: 130px;
@@ -124,7 +117,6 @@
     padding: 20px 0 20px 0;
     transition: var(--transition);
   }
-
   .flowchart {
     justify-content: flex-start;
   }
@@ -134,7 +126,6 @@
   .flowchart {
     justify-content: center;
   }
-
   .flowchart-pill {
     width: 150px;
     height: 130px;
@@ -142,7 +133,6 @@
     margin-left: -45px;
     transition: var(--transition);
   }
-
   .flowchart-pill-small {
     width: 110px;
     height: 50px;
