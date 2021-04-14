@@ -157,7 +157,7 @@ h3 {
 #navbar .nav-link:hover,
 .main-section a:hover,
 .icons a:hover {
-  color: var(--blue-regular);
+  color: var(--yellow-bold);
   transition: var(--transition);
 }
 
@@ -308,7 +308,7 @@ h3 {
   /* Required for animation by the worklet */
   --ripple-x: 0;
   --ripple-y: 0;
-  --ripple-color: var(--blue-regular);
+  --ripple-color: var(--yellow-bold);
   --animation-tick: 0;
 }
 

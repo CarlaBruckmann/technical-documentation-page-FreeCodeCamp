@@ -167,12 +167,13 @@
           used to register a Paint Worklet and define its functionality.
         </p>
         <pre><code>registerPaint("paintWorketExample", class {
-        static get inputProperties() { return ["--myVariable"]; }
-        static get inputArguments() { return ["<color>"]; }
-        static get contextOptions() { return {alpha: true}; }paint(ctx, size, properties, args) {
-          /* ... */
-        }
-       }); </code></pre>
+  static get inputProperties() { return ["--myVariable"]; }
+  static get inputArguments() { return ["<color>"]; }
+  static get contextOptions() { return {alpha: true}; }
+  paint(ctx, size, properties, args) {
+    /* ... */
+  }
+}); </code></pre>
         <p>
           The <code>registerPaint</code> function consists of several parts:
         </p>
@@ -235,10 +236,10 @@
           actions and CSS custom properties value change to respond to.
         </p>
         <pre><code>.exampleElement {
-          /* paintWorkletExample - name of the worklet
-             blue - argument passed to a Worklet */
-          background-image: paint(paintWorketExample, blue);
-        }</code></pre>
+  /* paintWorkletExample: name of the Worklet
+  blue: argument passed to a Worklet */
+  background-image: paint(paintWorketExample, blue);
+}</code></pre>
       </section>
 
       <section id="Browser_Support" class="main-section">
