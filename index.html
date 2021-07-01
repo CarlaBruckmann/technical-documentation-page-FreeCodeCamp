@@ -13,23 +13,24 @@
   <link rel="manifest" href="assets/layout/favicon/site.webmanifest" />
 </head>
 <body>
-  <main id="main-doc" class="d-flex-row-responsive">
-    <nav id="navbar" class="d-flex-column-responsive background">
+  <main id="main-doc" class="d-flex-row-responsive" role="main">
+    <nav id="navbar" class="d-flex-column-responsive background" role="navigation"
+    aria-level="main navigation">
       <header class="d-flex-column content-center">
         <img id="header-image" src="assets/img/menu-img.png" alt="magician image" />
         <h1>CSS Houdini<br />Paint Worklet</h1>
       </header>
-      <ul class="menu">
+      <ul class="menu" role="menu">
         <li>
-          <a class="nav-link" href="#What_is_Houdini?">What is Houdini?</a>
+          <a class="nav-link" href="#What_is_Houdini?" role="menuitem">What is Houdini?</a>
         </li>
-        <li><a class="nav-link" href="#Worklet">Worklet</a></li>
-        <li><a class="nav-link" href="#Paint_Worklet">Paint Worklet</a></li>
+        <li><a class="nav-link" href="#Worklet" role="menuitem">Worklet</a></li>
+        <li><a class="nav-link" href="#Paint_Worklet" role="menuitem">Paint Worklet</a></li>
         <li>
-          <a class="nav-link" href="#Browser_Support">Browser Support</a>
+          <a class="nav-link" href="#Browser_Support" role="menuitem">Browser Support</a>
         </li>
-        <li><a class="nav-link" href="#Examples">Examples</a></li>
-        <li><a class="nav-link" href="#References">References</a></li>
+        <li><a class="nav-link" href="#Examples" role="menuitem">Examples</a></li>
+        <li><a class="nav-link" href="#References" role="menuitem">References</a></li>
       </ul>
     </nav>
     <div id="sections">
